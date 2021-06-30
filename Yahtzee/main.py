@@ -1,6 +1,7 @@
 import pygame
 import sys
 import random
+import Tkinter
 
 class Draw:
 
@@ -11,14 +12,40 @@ class Draw:
         self.DICE_HEIGHT = 60
         self.DOT_LINE_THICKNESS = 8
         self.DICE_LINE_THICKNESS = 2
-        self.DOT_GAP = 10
+        self.DOT_GAP = 18
     def drawOne(self, screen, color, rectTopCornerX, rectTopCornerY):
-        pygame.draw.rect(screen, BLACK, pygame.Rect(rectTopCornerX, rectTopCornerY, self.DICE_WIDTH, self.DICE_HEIGHT), self.DICE_LINE_THICKNESS)
-        pygame.draw.circle(screen, BLACK, (rectTopCornerX + self.DICE_WIDTH/2, rectTopCornerY + self.DICE_HEIGHT/2), self.DOT_LINE_THICKNESS)
+        pygame.draw.rect(screen, color, pygame.Rect(rectTopCornerX, rectTopCornerY, self.DICE_WIDTH, self.DICE_HEIGHT), self.DICE_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, (rectTopCornerX + self.DICE_WIDTH/2, rectTopCornerY + self.DICE_HEIGHT/2), self.DOT_LINE_THICKNESS)
     def drawTwo(self, screen, color, rectTopCornerX, rectTopCornerY):
-        pygame.draw.rect(screen, BLACK, pygame.Rect(rectTopCornerX, rectTopCornerY, self.DICE_WIDTH, self.DICE_HEIGHT), self.DICE_LINE_THICKNESS)
-        pygame.draw.circle(screen, BLACK,((rectTopCornerX + self.DICE_WIDTH/2)+self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)-dotShift), self.DOT_LINE_THICKNESS)
-        pygame.draw.circle(screen, BLACK,((rectTopCornerX + self.DICE_WIDTH/2)-dotShift, (rectTopCornerY + self.DICE_HEIGHT/2)+dotShift), self.DOT_LINE_THICKNESS)
+        pygame.draw.rect(screen, color, pygame.Rect(rectTopCornerX, rectTopCornerY, self.DICE_WIDTH, self.DICE_HEIGHT), self.DICE_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)+self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)-self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)-self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)+self.DOT_GAP), self.DOT_LINE_THICKNESS)
+    def drawThree(self, screen, color, rectTopCornerX, rectTopCornerY):
+        pygame.draw.rect(screen, color, pygame.Rect(rectTopCornerX, rectTopCornerY, self.DICE_WIDTH, self.DICE_HEIGHT), self.DICE_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)+self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)-self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)-self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)+self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2), (rectTopCornerY + self.DICE_HEIGHT/2)), self.DOT_LINE_THICKNESS)
+    def drawFour(self, screen, color, rectTopCornerX, rectTopCornerY):
+        pygame.draw.rect(screen, color, pygame.Rect(rectTopCornerX, rectTopCornerY, self.DICE_WIDTH, self.DICE_HEIGHT), self.DICE_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)+self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)-self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)-self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)+self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)-self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)-self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)+self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)+self.DOT_GAP), self.DOT_LINE_THICKNESS)
+    def drawFive(self, screen, color, rectTopCornerX, rectTopCornerY):
+        pygame.draw.rect(screen, color, pygame.Rect(rectTopCornerX, rectTopCornerY, self.DICE_WIDTH, self.DICE_HEIGHT), self.DICE_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)+self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)-self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)-self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)+self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)-self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)-self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)+self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)+self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2), (rectTopCornerY + self.DICE_HEIGHT/2)), self.DOT_LINE_THICKNESS)
+    def drawSix(self, screen, color, rectTopCornerX, rectTopCornerY):
+        pygame.draw.rect(screen, color, pygame.Rect(rectTopCornerX, rectTopCornerY, self.DICE_WIDTH, self.DICE_HEIGHT), self.DICE_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)+self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)-self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)-self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)+self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)-self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)-self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)+self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)+self.DOT_GAP), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)+self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)), self.DOT_LINE_THICKNESS)
+        pygame.draw.circle(screen, color, ((rectTopCornerX + self.DICE_WIDTH/2)-self.DOT_GAP, (rectTopCornerY + self.DICE_HEIGHT/2)), self.DOT_LINE_THICKNESS)
 
 class Dice:
     def __init__(self):
@@ -30,7 +57,7 @@ class DiceSet:
     def __init__(self):
         self.diceSet = []
 
-class Ruleset:
+class RuleSet:
     def __init__(self):
         print("TO-DO")
 
@@ -48,26 +75,24 @@ class Player:
 class GameWindow:
     def __init__(self):
         print("TO-DO")
-    def drawDice(self):
-        print("TO-DO")
 
-# Global Variable Declarations
-BLACK = (0,0,0)
-WHITE = (255,255,255)
-# DICE_WIDTH = 60
-# DICE_HEIGHT = 60
-# DOT_LINE_THICKNESS = 10
-# DICE_LINE_THICKNESS = 2
 
 def main():
     print("Yahtzee")
-    rectTopCornerX = 100
-    rectTopCornerY = 55
+    BLACK = (0,0,0)
+    WHITE = (255,255,255)
+    rectTopCornerX = 25
+    rectTopCornerY = 25
     pygame.init()
-    screen = pygame.display.set_mode((400,600))
+    screen = pygame.display.set_mode((600,600))
     screen.fill(WHITE)
     testDice = Draw()
-    testDice.drawTwo(screen, BLACK, rectTopCornerX, rectTopCornerY)
+    testDice.drawOne(screen, BLACK, rectTopCornerX, rectTopCornerY)
+    testDice.drawTwo(screen, BLACK, rectTopCornerX + 75, rectTopCornerY)
+    testDice.drawThree(screen, BLACK, rectTopCornerX + 2*75, rectTopCornerY)
+    testDice.drawFour(screen, BLACK, rectTopCornerX + 3*75, rectTopCornerY)
+    testDice.drawFive(screen, BLACK, rectTopCornerX + 4*75, rectTopCornerY)
+    testDice.drawSix(screen, BLACK, rectTopCornerX + 5*75, rectTopCornerY)
     # pygame.draw.rect(screen,BLACK,pygame.Rect(rectTopCornerX, rectTopCornerY, DICE_WIDTH, DICE_HEIGHT),DICE_LINE_THICKNESS)
     # pygame.draw.circle(screen,BLACK,(rectTopCornerX + DICE_WIDTH/2, rectTopCornerY + DICE_HEIGHT/2), DOT_LINE_THICKNESS)
     # pygame.display.flip()
