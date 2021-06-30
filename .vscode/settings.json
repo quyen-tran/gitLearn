@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "iostream": "cpp"
-    }
+    },
+    "python.pythonPath": "D:\\ProgramData\\Anaconda3\\envs\\gameDev\\python.exe"
 }
