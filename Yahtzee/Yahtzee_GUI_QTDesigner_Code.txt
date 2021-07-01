@@ -1,0 +1,76 @@
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'Yahtzee_GUI_DesignerajFePb.ui'
+##
+## Created by: Qt User Interface Compiler version 5.15.2
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        if not MainWindow.objectName():
+            MainWindow.setObjectName(u"MainWindow")
+        MainWindow.resize(600, 600)
+        MainWindow.setMinimumSize(QSize(400, 400))
+        MainWindow.setMaximumSize(QSize(600, 600))
+        self.centralwidget = QWidget(MainWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.tabWidget = QTabWidget(self.centralwidget)
+        self.tabWidget.setObjectName(u"tabWidget")
+        self.tabWidget.setGeometry(QRect(30, 330, 541, 171))
+        self.tabWidget.setTabPosition(QTabWidget.West)
+        self.tabWidget.setTabShape(QTabWidget.Rounded)
+        self.tabWidget.setElideMode(Qt.ElideLeft)
+        self.tab = QWidget()
+        self.tab.setObjectName(u"tab")
+        self.verticalScrollBar_2 = QScrollBar(self.tab)
+        self.verticalScrollBar_2.setObjectName(u"verticalScrollBar_2")
+        self.verticalScrollBar_2.setGeometry(QRect(500, 0, 16, 160))
+        self.verticalScrollBar_2.setOrientation(Qt.Vertical)
+        self.tabWidget.addTab(self.tab, "")
+        self.tab_2 = QWidget()
+        self.tab_2.setObjectName(u"tab_2")
+        self.verticalScrollBar = QScrollBar(self.tab_2)
+        self.verticalScrollBar.setObjectName(u"verticalScrollBar")
+        self.verticalScrollBar.setGeometry(QRect(500, 0, 16, 160))
+        self.verticalScrollBar.setOrientation(Qt.Vertical)
+        self.tabWidget.addTab(self.tab_2, "")
+        self.pushButton = QPushButton(self.centralwidget)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(260, 260, 75, 23))
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QMenuBar(MainWindow)
+        self.menubar.setObjectName(u"menubar")
+        self.menubar.setGeometry(QRect(0, 0, 600, 21))
+        self.menuTest = QMenu(self.menubar)
+        self.menuTest.setObjectName(u"menuTest")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QStatusBar(MainWindow)
+        self.statusbar.setObjectName(u"statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.menubar.addAction(self.menuTest.menuAction())
+
+        self.retranslateUi(MainWindow)
+
+        self.tabWidget.setCurrentIndex(0)
+
+
+        QMetaObject.connectSlotsByName(MainWindow)
+    # setupUi
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Yahtzee", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Player 1", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Player 2", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Roll", None))
+        self.menuTest.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
+    # retranslateUi
+
