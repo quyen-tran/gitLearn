@@ -1,3 +1,5 @@
+from collections import Counter
+
 class Solution:
     def containsDuplicate(self, nums):
         """Given an integer array nums, return True if any value appears at 
@@ -18,6 +20,8 @@ class Solution:
         # First implementation using a list with O(n) time complexity for lookup
         # Implementation failed to pass when encountered with very large arrays
         # Resulted in Time Out Error
+        """
+        """
         unique_nums = []
         for n in nums:
             if n not in unique_nums:
@@ -34,11 +38,27 @@ class Solution:
         # Runtime: 499 ms, faster than 58.53 percent of submissions
         # Memory Usage: 26 MB, less than 54.62 percent of submissions
         """
+        """
         unique_nums = set(nums)
         if len(nums) == len(unique_nums):
             return False
         else:
             return True
+        """
+        
+        """
+        # Third implementation utilizing Counter from the collection library
+        # Counter is essentially a dict subclass that counts hashable objects
+        #
+        # Runtime: 468 ms, faster than 68.00 percent of submissions
+        # Memory Usage: 26 MB, less than 29.44 percent of submissions
+        """
+        counted_nums = Counter(nums)
+        most_common = counted_nums.most_common(1)
+        if most_common[0][1] > 1:
+            return True
+        else:
+            return False
         
 def main():
     # Test Case #1
